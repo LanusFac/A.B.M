@@ -1,0 +1,38 @@
+/* types.h*/
+
+#ifndef TYPES__H
+#define TYPES__H
+
+#include <stdio.h>
+
+typedef enum {
+	ERROR_NULL_POINTER = 0,
+	ERROR_INPUT_ARGUMENTS = 1,
+	ERROR_OPEN_INVENTORY_FILE = 2,
+	ERROR_OPEN_COMPARISON_FILE = 3,
+	ERROR_OPEN_OUTPUT_FILE = 4,
+	ERROR_CLOSE_FILE = 5,
+	ERROR_PRODUCT_DOES_NOT_EXIST = 6,
+	ERROR_DUPLICATED_KEY = 7,
+	ERROR_INVALID_DATA = 8,
+	ERROR_OUT_MEMORY = 9,
+	ERROR_PRODUCT_ASSIGNATE_ATTRIBUTES = 10,
+	ERROR_CAN_NOT_REMOVE_INVENTORY_FILE = 11,
+	ERROR_CAN_NOT_REMOVE_COMPARISON_FILE = 12,
+	ERROR_CANT_RENAME_TEMP_FILE = 13,
+	ERROR_EXPORT_PRODUCT_AS_CSV = 14,
+	OK
+} status_t;
+
+typedef struct {
+	size_t id;
+	char *description;
+	double price;
+} product_t;
+
+typedef enum {
+	FALSE,
+	TRUE
+} bool_t;
+
+#endif

@@ -1,0 +1,33 @@
+/* errors.c */
+
+#include <stdio.h>
+#include "types.h"
+#include "errors.h"
+
+#define MAX_ERRORS 25
+
+status_t print_error (status_t status)
+{
+	static const char *errors[MAX_ERRORS] = {
+		MSG_ERROR_NULL_POINTER, 
+		MSG_ERROR_INPUT_ARGUMENTS, 
+		MSG_ERROR_OPEN_INVENTORY_FILE, 
+		MSG_ERROR_OPEN_COMPARISON_FILE, 
+		MSG_ERROR_OPEN_OUTPUT_FILE, 
+		MSG_ERROR_CLOSE_FILE, 
+		MSG_ERROR_PRODUCT_DOES_NOT_EXIST,
+		MSG_ERROR_DUPLICATED_KEY,
+		MSG_ERROR_INVALID_DATA, 
+		MSG_ERROR_OUT_MEMORY, 
+		MSG_ERROR_PRODUCT_ASSIGNATE_ATTRIBUTES,
+		MSG_ERROR_CAN_NOT_REMOVE_INVENTORY_FILE,
+		MSG_ERROR_CAN_NOT_REMOVE_COMPARISON_FILE,
+		MSG_ERROR_CANT_RENAME_TEMP_FILE,
+		MSG_ERROR_EXPORT_PRODUCT_AS_CSV
+	};
+
+	fprintf(stderr, "%s\n", errors[status]);
+
+	return OK;
+}
+
